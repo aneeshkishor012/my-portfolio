@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,8 +20,33 @@
   }
 }
 
+/* Default smooth transitions */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply transition-colors duration-500;
+  }
+  
+  /* Light / Dark mode basics */
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+  
+  /* Section layout consistency */
+  section {
+    @apply px-6 md:px-12 lg:px-20 py-20;
+  }
+  
+  /* Headings */
+  h1,
+  h2,
+  h3 {
+    @apply font-bold tracking-tight;
+}
+
+/* Reusable card class */
+.card {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all;
 }
