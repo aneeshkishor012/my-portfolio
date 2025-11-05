@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -15,6 +17,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  basePath: isProd ? "/my-portfolio" : "", // 👈 your repo name here
+  assetPrefix: isProd ? "/my-portfolio/" : "",
 };
 
 export default nextConfig;
