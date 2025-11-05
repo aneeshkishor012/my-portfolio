@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import mongoose from "mongoose";
@@ -28,8 +29,12 @@ const jsonData = [
 ]
 
 export async function GET() {
-    await connectDB();
-    const projects = await Project.find().limit(3);
-    // return NextResponse.json(projects);
-    return jsonData;
+    try {
+        await connectDB();
+        const projects = await Project.find().limit(3);
+        return NextResponse.json(jsonData);
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+        return NextResponse.json({ message: "Error fetching projects" }, { status: 500 });
+    }
 }

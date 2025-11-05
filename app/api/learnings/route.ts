@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import mongoose from "mongoose";
@@ -29,8 +30,15 @@ const jsonData = [
     }
 ]
 export async function GET() {
-    await connectDB();
-    const learnings = await Learning.find().limit(3);
-    // return NextResponse.json(learnings);
-    return jsonData;
+    try {
+        await connectDB();
+        const learnings = await Learning.find().limit(3);
+        return NextResponse.json(jsonData); // ✅ Must return a Response object
+    } catch (error) {
+        console.error("Error fetching learnings:", error);
+        return NextResponse.json(
+            { message: "Failed to fetch learnings" },
+            { status: 500 }
+        );
+    }
 }

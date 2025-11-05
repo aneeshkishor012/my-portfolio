@@ -50,3 +50,11 @@ body {
 .card {
   @apply bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all;
 }
+/* Extra subtle gradient glow for the hero image */
+.hero-glow {
+  box-shadow: 0 0 25px rgba(0, 162, 255, 0.4);
+}
+
+.dark .hero-glow {
+  box-shadow: 0 0 35px rgba(0, 162, 255, 0.5);
+}
