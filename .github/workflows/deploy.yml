@@ -3,7 +3,7 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - master  # or main if that’s your default branch
+      - master
 
 jobs:
   build-and-deploy:
@@ -16,16 +16,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 'latest'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build the project
         run: npm run build
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}   # ✅ Pass the secret here
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # For CRA, or `.next/out` if using Next.js export
+          publish_dir: ./out  # If using next export; else ./build for CRA
