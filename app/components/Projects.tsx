@@ -40,14 +40,21 @@ export default function Projects() {
     }, []);
 
     return (
-        <section id="projects" className="py-20 text-center bg-white dark:bg-gray-900">
+        <section
+            id="projects"
+            className="py-20 bg-gray-50 dark:bg-gray-800/75 text-center"
+        >
+
+
             <h2 className="text-3xl font-bold mb-8">Projects</h2>
 
             <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-3 px-6">
                 {projects.map((p, idx) => (
                     <div
                         key={idx}
-                        className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition"
+                        className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition"
+                        // className="card p-6 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition"
+
                     >
                         <h3 className="text-xl font-semibold text-blue-500 mb-2">{p.title}</h3>
                         <p className="text-gray-700 dark:text-gray-300 text-sm mb-3 leading-relaxed">

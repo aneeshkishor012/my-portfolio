@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AnimatedBg from "./AnimatedBg";
 
 export default function About() {
     return (
         <section
             id="about"
-            className="py-20 bg-gray-50 dark:bg-gray-800 text-center"
+            className="py-20 bg-gray-50 dark:bg-gray-800/75 text-center"
         >
             <motion.div
                 initial={{ opacity: 0, y: 50 }}

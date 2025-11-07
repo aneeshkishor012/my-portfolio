@@ -33,7 +33,9 @@ export default function Footer() {
     return (
         <footer className="py-6 text-center border-t dark:border-gray-700">
             {/* ✅ Responsive Social Links */}
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-3 px-4">
+            <div
+                className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-3 px-4"
+            >
                 {socialLinks.map(({ name, icon: Icon, href }) => (
                     <a
                         key={name}

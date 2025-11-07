@@ -1,48 +1,26 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
-import Particles from "@tsparticles/react";
-import { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedBg from "./AnimatedBg";
 
 export default function Hero() {
-    const [init, setInit] = useState(false);
 
-    useEffect(() => {
-        // Initialize the particles engine
-        initParticlesEngine(async (engine) => {
-            await loadSlim(engine); // ✅ Load lightweight engine
-        }).then(() => setInit(true));
-    }, []);
 
     return (
         <section
             id="hero"
             className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-4 sm:px-8 overflow-hidden"
         >
-            {init && (
-                <Particles
-                    id="tsparticles"
-                    className="absolute inset-0 -z-10"
-                    options={{
-                        background: { color: "transparent" },
-                        particles: {
-                            number: { value: 40 },
-                            color: { value: "#00aaff" },
-                            links: { enable: true, color: "#00aaff" },
-                            move: { enable: true, speed: 1 },
-                        },
-                    }}
-                />
-            )}
-
+            {/* ✅ Global Animated Background */}
+            <div className="fixed inset-0 -z-10">
+                <AnimatedBg />
+            </div>
             {/* Profile Image */}
             <motion.div
                 initial={{ y: 0 }}
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border-4 border-blue-500 shadow-xl overflow-hidden mb-5"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full border-4 border-blue-500 shadow-xl overflow-hidden mb-5"
             >
                 <Image
                     // src="https://i.pinimg.com/736x/3c/d0/76/3cd076db7a9c1d1e3e1abb7569d9f866.jpg"

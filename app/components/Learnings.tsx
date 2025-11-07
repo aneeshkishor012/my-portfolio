@@ -81,14 +81,17 @@ export default function Learnings() {
     }, []);
 
     return (
-        <section id="learnings" className="py-20 text-center bg-gray-50 dark:bg-gray-800">
+        <section
+            id="learnings"
+            className="py-20 bg-gray-50/70 dark:bg-gray-900/60 items-center justify-center text-center"
+        >
             <h2 className="text-3xl font-bold mb-8">My Learnings</h2>
 
-            <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
                 {learnings.map((learning, idx) => (
                     <div
                         key={idx}
-                        className="p-6 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition"
+                        className="card p-6 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition"
                     >
                         {learning?.image && <div className="relative w-100% h-16 mb-4">
                             <Image

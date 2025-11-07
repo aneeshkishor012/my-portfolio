@@ -10,6 +10,8 @@
     "deploy": "npm run build && npx gh-pages -d out -b gh-pages -f"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.98",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
     "emailjs-com": "^3.2.0",
