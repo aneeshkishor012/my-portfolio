@@ -16,10 +16,13 @@ export default function Navbar() {
             transition={{ duration: 0.6 }}
             className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg rounded-full px-6 py-3 border border-gray-200 dark:border-gray-700 flex items-center justify-between"
         >
-            {/* Logo */}
-            <Link href="/" className="text-lg font-bold text-blue-600 dark:text-blue-400">
-                Aneesh<span className="text-gray-800 dark:text-gray-100"></span>
+            {/* Logo/Profile Badge */}
+            <Link href="/" className="flex items-center space-x-2">
+                <div className="w-10 mr-5 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg dark:bg-blue-400 dark:text-gray-900 shadow-md">
+                    AK
+                </div>
             </Link>
+
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-6">

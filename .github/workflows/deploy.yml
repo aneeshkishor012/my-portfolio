@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'latest'
+          node-version: '20'  # LTS is safer than 'latest'
 
       - name: Install dependencies
         run: npm ci
@@ -24,10 +24,14 @@ jobs:
       - name: Build the project
         run: npm run build
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}   # ✅ Pass the secret here
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # If using next export; else ./build for CRA
+          publish_dir: ./out
