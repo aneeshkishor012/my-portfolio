@@ -91,7 +91,7 @@ export default function Learnings() {
                 {learnings.map((learning, idx) => (
                     <div
                         key={idx}
-                        className="card p-6 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition"
+                        className="card p-6 rounded-xl shadow-md hover:shadow-lg transition"
                     >
                         {learning?.image && <div className="relative w-100% h-16 mb-4">
                             <Image

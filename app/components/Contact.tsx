@@ -81,7 +81,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800"
+                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400"
                     required
                 />
 
@@ -91,7 +91,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800"
+                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400"
                     required
                 />
 
@@ -100,7 +100,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Your Message"
-                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800"
+                    className="p-3 rounded border dark:border-gray-700 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400"
                     rows={5}
                     required
                 />

@@ -122,6 +122,7 @@ export default function Skills() {
         <section
             id="skills"
             className="py-20 bg-gray-50/70 dark:bg-gray-900/60"
+
         >
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-10">My Skills & Technologies</h2>
