@@ -8,16 +8,17 @@ export const resources = [
     {
         title: "C Programming",
         level: 85,
+        category: "Language",
         description:
-            "A powerful general-purpose programming language used for system software, embedded systems, and high-performance applications. Known for its efficiency, portability, and close-to-hardware capabilities.",
+            "A powerful general-purpose programming language used for system software, embedded systems, and high-performance applications.",
         link: "https://devdocs.io/c/",
         image: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
     },
     {
         title: "HTML5",
         level: 85,
-        description:
-            "Markup language for structuring and presenting web content.",
+        category: "Frontend",
+        description: "Markup language for structuring and presenting web content.",
         link: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
         image:
             "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
@@ -25,16 +26,16 @@ export const resources = [
     {
         title: "CSS3",
         level: 80,
-        description:
-            "Stylesheet language for designing visually appealing web pages.",
+        category: "Frontend",
+        description: "Stylesheet language for designing visually appealing web pages.",
         link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
         image: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
     },
     {
         title: "JavaScript",
         level: 90,
-        description:
-            "Programming language that powers interactive web experiences.",
+        category: "Language",
+        description: "Programming language that powers interactive web experiences.",
         link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
         image:
             "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
@@ -42,6 +43,7 @@ export const resources = [
     {
         title: "ReactJS",
         level: 90,
+        category: "Frontend",
         description: "JavaScript library for building user interfaces.",
         link: "https://react.dev/",
         image:
@@ -50,6 +52,7 @@ export const resources = [
     {
         title: "React Native",
         level: 85,
+        category: "Frontend",
         description: "Framework for building native apps using React.",
         link: "https://reactnative.dev/",
         image: "https://reactnative.dev/img/header_logo.svg",
@@ -57,20 +60,21 @@ export const resources = [
     {
         title: "Python Basics",
         level: 80,
-        description:
-            "A beginner-friendly, high-level programming language known for its simplicity, readability, and vast library support. Ideal for data analysis, web development, automation, and AI applications.",
+        category: "Language",
+        description: "High-level programming language known for its simplicity and versatility.",
         link: "https://docs.python.org/3/tutorial/",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
     },
     {
         title: "Git",
+        category: "Tools",
         description: "Version control system for tracking code changes.",
         link: "https://git-scm.com/doc",
         image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
     },
     {
         title: "Node.js",
+        category: "Backend",
         description: "JavaScript runtime for backend development.",
         link: "https://nodejs.org/en/docs/",
         image:
@@ -78,13 +82,14 @@ export const resources = [
     },
     {
         title: "UI Libraries",
-        description:
-            "Pre-built UI components like Ant Design, Material UI.",
+        category: "Frontend",
+        description: "Pre-built UI components like Ant Design, Material UI.",
         link: "https://ant.design/",
         image:
             "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
     },
 ];
+
 
 export default function Skills() {
     const [skills, setSkills] = useState<any[]>([]);
@@ -106,13 +111,12 @@ export default function Skills() {
     }, []);
 
     // ✅ Dynamic category extraction
-    const categories = ["All", "Frontend", "Backend", "Language", "Tools"];
+    const categories = ["All", ...new Set(skills.map((s) => s.category))];
     const filteredSkills =
         filter === "All"
             ? skills
-            : skills.filter((skill) =>
-                skill.title.toLowerCase().includes(filter.toLowerCase())
-            );
+            : skills.filter((skill) => skill.category === filter);
+
 
     return (
         <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -134,6 +138,7 @@ export default function Skills() {
                         </button>
                     ))}
                 </div>
+
 
                 {/* ✅ Skills Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
