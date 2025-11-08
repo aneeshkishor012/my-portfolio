@@ -52,6 +52,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-md sm:max-w-xl mt-3"
+                style={{ color: "var(--text-color)" }}
             >
                 A passionate Frontend Developer crafting interactive, elegant, and
                 performance-focused web experiences.
