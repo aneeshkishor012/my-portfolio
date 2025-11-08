@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-*/:root {
-  /* 🌞 Light theme background */
-  --bg-color: #71b1f1;
-  /* very light gray */
-  --card-bg: rgba(172, 182, 228, 0.8);
-  --text-color: #101e3b;
+:root {
+  --bg-transparent: rgba(255, 255, 255, 0);
+  --bg-color: #f9fafb;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --text-color: #1e293b;
+  --subtext-color: #475569;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --progress-bg: rgba(226, 232, 240, 0.6);
+  --accent-color: #2563eb;
+  --accent-light: #3b82f6;
+  /* Optional feedback colors */
+  --success-color: #16a34a;
+  --error-color: #dc2626;
+  --warning-color: #ca8a04;
 }
 
 .dark {
-  /* 🌚 Dark theme background */
   --bg-color: #0f172a;
-  /* deep dark blue-gray */
-  --card-bg: rgba(50, 64, 94, 0.8);
-  --text-color: #f3f4f6;
+  --card-bg: rgba(17, 24, 39, 0.7);
+    --text-color: #f9fafb;
+    --subtext-color: #cbd5e1;
+    --border-color: rgba(255, 255, 255, 0.15);
+    --progress-bg: rgba(51, 65, 85, 0.7);
+    --accent-color: #60a5fa;
+    --accent-light: #93c5fd;
+    /* Optional feedback colors */
+    --success-color: #22c55e;
+    --error-color: #f87171;
+    --warning-color: #facc15;
 }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -42,23 +52,23 @@ html {
 
 body {
   @apply transition-colors duration-500;
-  }
-  
-  /* Light / Dark mode basics */
-  body {
-    @apply bg-blue-500 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
-  }
-  
-  /* Section layout consistency */
-  section {
-    @apply px-6 md:px-12 lg:px-20 py-20;
-  }
-  
-  /* Headings */
-  h1,
-  h2,
-  h3 {
-    @apply font-bold tracking-tight;
+}
+
+/* Light / Dark mode basics */
+body {
+  @apply bg-blue-500 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+}
+
+/* Section layout consistency */
+section {
+  @apply px-6 md:px-12 lg:px-20 py-20;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  @apply font-bold tracking-tight;
 }
 
 /* Reusable card class */

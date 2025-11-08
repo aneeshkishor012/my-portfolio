@@ -14,23 +14,42 @@ export default function Navbar() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg rounded-full px-6 py-3 border border-gray-200 dark:border-gray-700 flex items-center justify-between"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto backdrop-blur-md rounded-full shadow-lg flex items-center justify-between pr-6 py-3 border transition-all duration-500"
+            style={{
+                backgroundColor: "var(--card-bg)",
+                borderColor: "var(--border-color)",
+                color: "var(--text-color)",
+            }}
         >
-            {/* Logo/Profile Badge */}
+            {/* ✅ Logo/Profile Badge */}
             <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 mr-5 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg dark:bg-blue-400 dark:text-gray-900 shadow-md">
+                <div
+                    className="w-10 mx-5 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-md transition-all duration-300 hover:scale-110"
+                    style={{
+                        backgroundColor: "var(--accent-color)",
+                        color: "#fff",
+                    }}
+                >
                     AK
                 </div>
             </Link>
 
-
-            {/* Desktop Menu */}
+            {/* ✅ Desktop Menu */}
             <div className="hidden md:flex items-center gap-6">
                 {sections.map((s) => (
                     <Link
                         key={s}
                         href={`#${s.toLowerCase()}`}
-                        className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                        className="text-sm font-medium transition-all duration-300 hover:drop-shadow-[0_0_6px_var(--accent-color)]"
+                        style={{
+                            color: "var(--text-color)",
+                        }}
+                        onMouseEnter={(e) =>
+                            (e.currentTarget.style.color = "var(--accent-color)")
+                        }
+                        onMouseLeave={(e) =>
+                            (e.currentTarget.style.color = "var(--text-color)")
+                        }
                     >
                         {s}
                     </Link>
@@ -38,24 +57,44 @@ export default function Navbar() {
                 <ThemeToggle />
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* ✅ Mobile Menu Toggle */}
             <button
-                className="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="md:hidden p-2 rounded-md transition-all duration-300 hover:scale-105"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
+                style={{
+                    color: "var(--text-color)",
+                    backgroundColor: "transparent",
+                }}
             >
                 {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            {/* Mobile Dropdown Menu */}
+            {/* ✅ Mobile Dropdown Menu */}
             {menuOpen && (
-                <div className="absolute top-full left-0 mt-2 w-full sm:w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col items-center gap-4 py-4 md:hidden">
+                <div
+                    className="absolute top-full left-0 mt-2 w-full sm:w-64 flex flex-col items-center gap-4 py-4 md:hidden rounded-2xl shadow-lg border backdrop-blur-md transition-all duration-300"
+                    style={{
+                        backgroundColor: "var(--card-bg)",
+                        borderColor: "var(--border-color)",
+                        color: "var(--text-color)",
+                    }}
+                >
                     {sections.map((s) => (
                         <Link
                             key={s}
                             href={`#${s.toLowerCase()}`}
                             onClick={() => setMenuOpen(false)}
-                            className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition"
+                            className="text-sm font-medium transition-all duration-300 hover:drop-shadow-[0_0_6px_var(--accent-color)]"
+                            style={{
+                                color: "var(--text-color)",
+                            }}
+                            onMouseEnter={(e) =>
+                                (e.currentTarget.style.color = "var(--accent-color)")
+                            }
+                            onMouseLeave={(e) =>
+                                (e.currentTarget.style.color = "var(--text-color)")
+                            }
                         >
                             {s}
                         </Link>

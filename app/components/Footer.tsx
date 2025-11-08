@@ -31,18 +31,34 @@ const socialLinks = [
 
 export default function Footer() {
     return (
-        <footer className="py-6 text-center border-t dark:border-gray-700">
-            {/* ✅ Responsive Social Links */}
-            <div
-                className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-3 px-4"
-            >
+        <footer
+            className="py-8 border-t text-center transition-all duration-500 backdrop-blur-[0.5px]"
+            style={{
+                backgroundColor: "var(--bg-transparent)",
+                borderColor: "var(--border-color)",
+                color: "var(--text-color)",
+            }}
+        >
+            {/* ✅ Social Links Grid */}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-4 px-4">
                 {socialLinks.map(({ name, icon: Icon, href }) => (
                     <a
                         key={name}
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 hover:drop-shadow-[0_0_6px_rgba(59,130,246,0.8)] transition-all duration-300"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105"
+                        style={{
+                            color: "var(--text-color)",
+                        }}
+                        onMouseEnter={(e) => {
+                            (e.currentTarget.style.color = "var(--accent-color)");
+                            (e.currentTarget.style.filter = "drop-shadow(0 0 8px var(--accent-color))");
+                        }}
+                        onMouseLeave={(e) => {
+                            (e.currentTarget.style.color = "var(--text-color)");
+                            (e.currentTarget.style.filter = "none");
+                        }}
                     >
                         <Icon size={20} />
                         <span className="hidden sm:inline">{name}</span>
@@ -50,8 +66,12 @@ export default function Footer() {
                 ))}
             </div>
 
-            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 px-4">
-                © 2025 Aneesh Kishor K
+            {/* ✅ Footer Text */}
+            <p
+                className="text-xs sm:text-sm transition-all duration-300"
+                style={{ color: "var(--subtext-color)" }}
+            >
+                © 2025 <span style={{ color: "var(--accent-color)" }}>Aneesh Kishor K</span>
             </p>
         </footer>
     );

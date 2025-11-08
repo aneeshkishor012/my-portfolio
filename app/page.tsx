@@ -5,7 +5,6 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Learnings from "./components/Learnings";
 import Contact from "./components/Contact";
-import AnimatedBg from "./components/AnimatedBg";
 
 export default function Home() {
   return (

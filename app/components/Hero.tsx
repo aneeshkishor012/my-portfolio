@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedBg from "./AnimatedBg";
+// import AnimatedBg from "./AnimatedBg";
+import dynamic from "next/dynamic";
+const AnimatedBg = dynamic(() => import("./AnimatedBg"), { ssr: false });
+
 
 export default function Hero() {
 

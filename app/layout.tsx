@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import AnimatedBg from "./components/AnimatedBg"; // ✅ Your animation component
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
