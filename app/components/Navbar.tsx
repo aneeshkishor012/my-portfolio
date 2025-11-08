@@ -14,7 +14,7 @@ export default function Navbar() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto backdrop-blur-md rounded-full shadow-lg flex items-center justify-between pr-6 py-3 border transition-all duration-500"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto backdrop-blur-md rounded-full shadow-lg flex items-center justify-between pr-4 py-3 border transition-all duration-500"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -57,18 +57,22 @@ export default function Navbar() {
                 <ThemeToggle />
             </div>
 
-            {/* ✅ Mobile Menu Toggle */}
-            <button
-                className="md:hidden p-2 rounded-md transition-all duration-300 hover:scale-105"
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle Menu"
-                style={{
-                    color: "var(--text-color)",
-                    backgroundColor: "transparent",
-                }}
-            >
-                {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* ✅ Mobile Icons Row (Theme + Menu) */}
+            <div className="flex items-center gap-3 md:hidden">
+                <ThemeToggle />
+
+                <button
+                    className="p-2 rounded-md transition-all duration-300 hover:scale-105"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="Toggle Menu"
+                    style={{
+                        color: "var(--text-color)",
+                        backgroundColor: "transparent",
+                    }}
+                >
+                    {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+            </div>
 
             {/* ✅ Mobile Dropdown Menu */}
             {menuOpen && (
@@ -99,7 +103,6 @@ export default function Navbar() {
                             {s}
                         </Link>
                     ))}
-                    <ThemeToggle />
                 </div>
             )}
         </motion.nav>
