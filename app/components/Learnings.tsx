@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+// ✅ Import your favorite icons here
+import { FaReact, FaNodeJs, FaCamera, FaAndroid, FaMapMarkerAlt } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript, SiApachecordova, SiExpo, SiGoogle } from "react-icons/si";
 
 const defaultLearnings = [
     {
@@ -31,6 +34,7 @@ const defaultLearnings = [
         title: "React Native Vision Camera",
         description: "High-performance camera library for React Native, supporting barcode and face detection.",
         link: "https://mrousavy.com/react-native-vision-camera/",
+        icon: FaCamera,
     },
     {
         title: "Apache Cordova",
@@ -42,11 +46,14 @@ const defaultLearnings = [
         title: "React Native Geolocation",
         description: "Access device location services easily using the React Native Geolocation API.",
         link: "https://github.com/react-native-geolocation/react-native-geolocation",
+        icon: FaMapMarkerAlt,
     },
     {
         title: "Google Gemini API (AI & Generative Key)",
         description: "Use Google’s Gemini Generative AI models for building intelligent chatbots and creative assistants.",
         link: "https://ai.google.dev/gemini-api/docs",
+        // icon: SiGoogle,
+        image: "/icons/Gemini.svg"
     },
     {
         title: "Expo (React Native Toolkit)",
@@ -61,6 +68,7 @@ const defaultLearnings = [
         image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
     },
 ];
+
 export default function Learnings() {
     const [learnings, setLearnings] = useState<any[]>([]);
 
@@ -81,7 +89,7 @@ export default function Learnings() {
     return (
         <section
             id="learnings"
-            className="py-20 transition-all duration-500  text-center"
+            className="py-20 transition-all duration-500 text-center"
             style={{
                 backgroundColor: "var(--bg-transparent)",
                 color: "var(--text-color)",
@@ -95,55 +103,66 @@ export default function Learnings() {
             </h2>
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-                {learnings.map((learning, idx) => (
-                    <div
-                        key={idx}
-                        className="p-6 rounded-xl shadow-md hover:shadow-lg border hover:-translate-y-1 backdrop-blur-md transition-all duration-300"
-                        style={{
-                            backgroundColor: "var(--card-bg)",
-                            borderColor: "var(--border-color)",
-                            color: "var(--text-color)",
-                        }}
-                    >
-                        {learning.image && (
+                {learnings.map((learning, idx) => {
+                    const Icon = learning.icon; // ✅ dynamic icon reference
+
+                    return (
+                        <div
+                            key={idx}
+                            className="p-6 rounded-xl shadow-md hover:shadow-lg border hover:-translate-y-1 backdrop-blur-md transition-all duration-300"
+                            style={{
+                                backgroundColor: "var(--card-bg)",
+                                borderColor: "var(--border-color)",
+                                color: "var(--text-color)",
+                            }}
+                        >
+                            {/* ✅ Conditionally Render Image or Icon */}
                             <div className="relative w-full h-20 mb-4 flex items-center justify-center">
-                                <Image
-                                    src={learning.image}
-                                    alt={learning.title}
-                                    fill
-                                    className="object-contain"
-                                    unoptimized
-                                />
+                                {learning.image ? (
+                                    <Image
+                                        src={learning.image}
+                                        alt={learning.title}
+                                        fill
+                                        className="object-contain"
+                                        unoptimized
+                                    />
+                                ) : Icon ? (
+                                    <Icon
+                                        size={56}
+                                        className="text-blue-500"
+                                        style={{ color: "var(--accent-color)" }}
+                                    />
+                                ) : null}
                             </div>
-                        )}
 
-                        <h3
-                            className="text-xl font-semibold mb-2"
-                            style={{ color: "var(--accent-color)" }}
-                        >
-                            {learning.title}
-                        </h3>
-
-                        <p
-                            className="text-sm leading-relaxed mb-3"
-                            style={{ color: "var(--subtext-color)" }}
-                        >
-                            {learning.description}
-                        </p>
-
-                        {learning.link && (
-                            <a
-                                href={learning.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block text-sm font-medium hover:underline"
+                            <h3
+                                className="text-xl font-semibold mb-2"
                                 style={{ color: "var(--accent-color)" }}
                             >
-                                View Resource ↗
-                            </a>
-                        )}
-                    </div>
-                ))}
+                                {learning.title}
+                            </h3>
+
+                            <p
+                                className="text-sm leading-relaxed mb-3"
+                                style={{ color: "var(--subtext-color)" }}
+                            >
+                                {learning.description}
+                            </p>
+
+                            {learning.link && (
+                                <a
+                                    href={learning.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block text-sm font-medium hover:underline"
+                                    style={{ color: "var(--accent-color)" }}
+                                >
+                                    View Resource ↗
+                                </a>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
 
             {learnings.length === 0 && (
@@ -154,4 +173,5 @@ export default function Learnings() {
         </section>
     );
 }
+
 
