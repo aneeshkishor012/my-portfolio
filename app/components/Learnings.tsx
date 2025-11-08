@@ -53,7 +53,7 @@ const defaultLearnings = [
         description: "Use Google’s Gemini Generative AI models for building intelligent chatbots and creative assistants.",
         link: "https://ai.google.dev/gemini-api/docs",
         // icon: SiGoogle,
-        image: "/icons/Gemini.svg"
+        image: "./icons/Gemini.svg"
     },
     {
         title: "Expo (React Native Toolkit)",
