@@ -18,7 +18,7 @@
 
 .dark {
   --bg-color: #0f172a;
-  --card-bg: rgba(17, 24, 39, 0.7);
+  --card-bg: #2a3959b3;
     --text-color: #f9fafb;
     --subtext-color: #cbd5e1;
     --border-color: rgba(255, 255, 255, 0.15);

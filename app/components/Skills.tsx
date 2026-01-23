@@ -2,93 +2,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { defaultSkills } from "../staticData/skills";
 
-// ✅ Your provided resources (skills list)
-export const resources = [
-    {
-        title: "C Programming",
-        level: 85,
-        category: "Language",
-        description:
-            "A powerful general-purpose programming language used for system software, embedded systems, and high-performance applications.",
-        link: "https://devdocs.io/c/",
-        image: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
-    },
-    {
-        title: "HTML5",
-        level: 85,
-        category: "Frontend",
-        description: "Markup language for structuring and presenting web content.",
-        link: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-    },
-    {
-        title: "CSS3",
-        level: 80,
-        category: "Frontend",
-        description: "Stylesheet language for designing visually appealing web pages.",
-        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
-    },
-    {
-        title: "JavaScript",
-        level: 90,
-        category: "Language",
-        description: "Programming language that powers interactive web experiences.",
-        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-    },
-    {
-        title: "ReactJS",
-        level: 90,
-        category: "Frontend",
-        description: "JavaScript library for building user interfaces.",
-        link: "https://react.dev/",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-    },
-    {
-        title: "React Native",
-        level: 85,
-        category: "Frontend",
-        description: "Framework for building native apps using React.",
-        link: "https://reactnative.dev/",
-        image: "https://reactnative.dev/img/header_logo.svg",
-    },
-    {
-        title: "Python Basics",
-        level: 80,
-        category: "Language",
-        description: "High-level programming language known for its simplicity and versatility.",
-        link: "https://docs.python.org/3/tutorial/",
-        image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-    },
-    {
-        title: "Git",
-        category: "Tools",
-        description: "Version control system for tracking code changes.",
-        link: "https://git-scm.com/doc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
-    },
-    {
-        title: "Node.js",
-        category: "Backend",
-        description: "JavaScript runtime for backend development.",
-        link: "https://nodejs.org/en/docs/",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-    },
-    {
-        title: "UI Libraries",
-        category: "Frontend",
-        description: "Pre-built UI components like Ant Design, Material UI.",
-        link: "https://ant.design/",
-        image:
-            "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
-    },
-];
+// ✅ Your provided defaultSkills (skills list)
+
 export default function Skills() {
     const [skills, setSkills] = useState<any[]>([]);
     const [filter, setFilter] = useState("All");
@@ -99,9 +16,9 @@ export default function Skills() {
                 const res = await fetch("/api/skills");
                 if (!res.ok) throw new Error("Network Error");
                 const data = await res.json();
-                setSkills(data.length ? data : resources);
+                setSkills(data.length ? data : defaultSkills);
             } catch {
-                setSkills(resources);
+                setSkills(defaultSkills);
             }
         };
         fetchSkills();

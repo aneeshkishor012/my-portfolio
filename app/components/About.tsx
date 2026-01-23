@@ -55,6 +55,37 @@ export default function About() {
                     experience.
                 </p>
 
+                {/* Experience */}
+                <p
+                    className="mt-6 leading-relaxed"
+                    style={{ color: "var(--subtext-color)" }}
+                >
+                    I bring{" "}
+                    <span style={{ color: "var(--accent-color)" }}>
+                        4+ years of hands-on experience
+                    </span>{" "}
+                    as a full-time intern and employee, working on large-scale{" "}
+                    <strong>E-Cart Management</strong> and{" "}
+                    <strong>Industry 4.0–based applications</strong>. My work
+                    includes building interactive and scalable frontend systems,
+                    real-time production monitoring solutions, and feature-rich
+                    dashboards with a strong focus on performance, usability,
+                    and modern design principles.
+                </p>
+
+                <p
+                    className="mt-4 leading-relaxed"
+                    style={{ color: "var(--subtext-color)" }}
+                >
+                    I have designed server-driven frontend architectures,
+                    developed complex business logic, integrated native
+                    capabilities such as BLE, Camera, and File System APIs, and
+                    built master applications like PPC Upload, WIP tracking,
+                    Reports, and Interactive Dashboards. I also actively support
+                    teams through UI development, reusable component creation,
+                    complex validation handling, and advanced debugging.
+                </p>
+
                 <p
                     className="mt-6 leading-relaxed"
                     style={{ color: "var(--subtext-color)" }}
