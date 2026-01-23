@@ -28,7 +28,6 @@ export default function Hero() {
                 <Image
                     // src="https://i.pinimg.com/736x/3c/d0/76/3cd076db7a9c1d1e3e1abb7569d9f866.jpg"
                     src="https://avatars.githubusercontent.com/u/91428186?v=4"
-
                     alt="Aneesh Kishor"
                     fill
                     priority
