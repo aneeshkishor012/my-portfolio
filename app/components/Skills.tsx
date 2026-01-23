@@ -7,22 +7,22 @@ import { defaultSkills } from "../staticData/skills";
 // ✅ Your provided defaultSkills (skills list)
 
 export default function Skills() {
-    const [skills, setSkills] = useState<any[]>([]);
+    const [skills, setSkills] = useState<any[]>(defaultSkills);
     const [filter, setFilter] = useState("All");
 
-    useEffect(() => {
-        const fetchSkills = async () => {
-            try {
-                const res = await fetch("/api/skills");
-                if (!res.ok) throw new Error("Network Error");
-                const data = await res.json();
-                setSkills(data.length ? data : defaultSkills);
-            } catch {
-                setSkills(defaultSkills);
-            }
-        };
-        fetchSkills();
-    }, []);
+    // useEffect(() => {
+    //     const fetchSkills = async () => {
+    //         try {
+    //             const res = await fetch("/api/skills");
+    //             if (!res.ok) throw new Error("Network Error");
+    //             const data = await res.json();
+    //             setSkills(data.length ? data : defaultSkills);
+    //         } catch {
+    //             setSkills(defaultSkills);
+    //         }
+    //     };
+    //     fetchSkills();
+    // }, []);
 
     const categories = ["All", ...new Set(skills.map((s) => s.category))];
     const filteredSkills =

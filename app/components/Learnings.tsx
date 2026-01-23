@@ -6,20 +6,20 @@ import { FaCamera, FaMapMarkerAlt } from "react-icons/fa";
 import { defaultLearnings } from "../staticData/learnings";
 
 export default function Learnings() {
-    const [learnings, setLearnings] = useState<any[]>([]);
+    const [learnings, setLearnings] = useState<any[]>(defaultLearnings);
 
     useEffect(() => {
-        const fetchLearnings = async () => {
-            try {
-                const res = await fetch("/api/learnings");
-                if (!res.ok) throw new Error("Network Error");
-                const data = await res.json();
-                setLearnings(data.length ? data : defaultLearnings);
-            } catch {
-                setLearnings(defaultLearnings);
-            }
-        };
-        fetchLearnings();
+        // const fetchLearnings = async () => {
+        //     try {
+        //         const res = await fetch("/api/learnings");
+        //         if (!res.ok) throw new Error("Network Error");
+        //         const data = await res.json();
+        //         setLearnings(data.length ? data : defaultLearnings);
+        //     } catch {
+        //         setLearnings(defaultLearnings);
+        //     }
+        // };
+        // fetchLearnings();
     }, []);
 
     return (

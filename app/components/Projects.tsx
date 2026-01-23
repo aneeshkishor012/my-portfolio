@@ -3,21 +3,21 @@ import { useEffect, useState } from "react";
 import { defaultProjects } from "../staticData/projects";
 
 export default function Projects() {
-    const [projects, setProjects] = useState<any[]>([]);
+    const [projects, setProjects] = useState<any[]>(defaultProjects);
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const res = await fetch("/api/projects");
-                if (!res.ok) throw new Error("Network Error");
-                const data = await res.json();
-                setProjects(data.length ? data : defaultProjects);
-            } catch {
-                setProjects(defaultProjects);
-            }
-        };
-        fetchProjects();
-    }, []);
+    // useEffect(() => {
+    //     const fetchProjects = async () => {
+    //         try {
+    //             const res = await fetch("/api/projects");
+    //             if (!res.ok) throw new Error("Network Error");
+    //             const data = await res.json();
+    //             setProjects(data.length ? data : defaultProjects);
+    //         } catch {
+    //             setProjects(defaultProjects);
+    //         }
+    //     };
+    //     fetchProjects();
+    // }, []);
 
     return (
         <section
