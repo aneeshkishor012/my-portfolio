@@ -1,29 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
+import { defaultProjects } from "../staticData/projects";
 
 export default function Projects() {
     const [projects, setProjects] = useState<any[]>([]);
-
-    const defaultProjects = [
-        {
-            title: "AI Chat Assistant",
-            description:
-                "Built an intelligent chat interface using Gemini AI API, supporting code editing and formatting tools.",
-            link: "https://github.com/aneeshkishork/ai-chat-assistant",
-        },
-        {
-            title: "Music Player App",
-            description:
-                "A React Native-based music player using react-native-track-player and Redux for global state.",
-            link: "https://github.com/aneeshkishork/music-app",
-        },
-        {
-            title: "Portfolio Website",
-            description:
-                "Created a modern personal portfolio using Next.js, Tailwind, and Framer Motion with theme toggle.",
-            link: "https://aneeshkishork.vercel.app/",
-        },
-    ];
 
     useEffect(() => {
         const fetchProjects = async () => {

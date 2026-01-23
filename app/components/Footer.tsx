@@ -71,7 +71,7 @@ export default function Footer() {
                 className="text-xs sm:text-sm transition-all duration-300"
                 style={{ color: "var(--subtext-color)" }}
             >
-                © 2025 <span style={{ color: "var(--accent-color)" }}>Aneesh Kishor K</span>
+                © 2026 <span style={{ color: "var(--accent-color)" }}>Aneesh Kishor K</span>
             </p>
         </footer>
     );
