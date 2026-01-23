@@ -26,8 +26,7 @@ export default function Hero() {
                 className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full border-4 border-blue-500 shadow-xl overflow-hidden mb-5"
             >
                 <Image
-                    // src="https://i.pinimg.com/736x/3c/d0/76/3cd076db7a9c1d1e3e1abb7569d9f866.jpg"
-                    src="https://avatars.githubusercontent.com/u/91428186?v=4"
+                    src="/heroImg.png"
                     alt="Aneesh Kishor"
                     fill
                     priority
