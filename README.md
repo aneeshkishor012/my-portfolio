@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Hi there, I'm Aneesh Kishor K 👋
 
-## Getting Started
+Welcome to my GitHub profile! I’m a dedicated Software Developer with a focus on Front-End Development. I have a passion for creating engaging user interfaces and bringing innovative ideas to life.
 
-First, run the development server:
+🛠️ Technologies & Skills
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Languages: JavaScript, Python, HTML, CSS
+    Tools & Frameworks: React, React Native
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 Projects
+1. Shopping Cart Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Developed a Shopping Cart application that allows users to purchase products from various local stores. This project demonstrates my ability to build user-friendly and functional e-commerce solutions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Music Application (In Progress)
 
-## Learn More
+Currently working on a Music Application that supports both online and offline song playback. This project is a work in progress and aims to offer a seamless music experience.
 
-To learn more about Next.js, take a look at the following resources:
+🎓 Education & Experience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Currently Studying: Bsc.Electronic-Inducstry Track
+    Internship: Full-time internship at Entrace India Pvt. Ltd (Formally LinkEZ Tech Pvt. Ltd)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🌟 Interests
 
-## Deploy on Vercel
+Outside of work, I enjoy:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Playing with React-Native: Experimenting with mobile app development.
+    Drawing: Exploring my creative side through art.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💞️ Collaboration
+
+I’m looking to collaborate on React Native and React open source projects. If you have an exciting project or idea, let’s connect and build something amazing together!
+
+📫 Contact
+
+Feel free to reach out to me:
+- **GitHub:** [aneeshkishor012](https://github.com/aneeshkishor012)
+- **LinkedIn:** [Aneesh Kishor K](https://www.linkedin.com/in/aneesh-kishor-k-88b040221/)
+- **Email:** [aneeshkishor012@gmail.com](mailto:aneeshkishor012@gmail.com)
+
+🎯 Goals
+
+I’m eager to dive deeper into the world of React and React Native, exploring new possibilities and creating impactful applications.
