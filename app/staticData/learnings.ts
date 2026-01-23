@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import { DiMongodb } from "react-icons/di";
 import { FaCamera, FaMapMarkerAlt } from "react-icons/fa";
 import { FaBluetooth, FaNodeJs, FaReact } from "react-icons/fa6";
@@ -8,7 +9,7 @@ type Learning = {
     description: string;
     link: string;
     image?: string;
-    icon?: React.ReactNode;
+    icon?: IconType;
 };
 
 export const defaultLearnings: Learning[] = [
