@@ -85,7 +85,7 @@ export default function Skills() {
                                 color: "var(--text-color)",
                             }}
                         >
-                            <div className="relative w-16 h-16 mb-4">
+                            <div className="relative w-20 h-20 mb-4">
                                 <Image
                                     src={skill.image}
                                     alt={skill.title}

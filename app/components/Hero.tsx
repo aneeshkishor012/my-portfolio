@@ -12,7 +12,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-4 sm:px-8 overflow-hidden"
+            className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-4 sm:px-8 overflow-hidden text-left"
         >
             {/* ✅ Global Animated Background */}
             <div className="fixed inset-0 -z-10">

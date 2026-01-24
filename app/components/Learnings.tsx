@@ -52,24 +52,29 @@ export default function Learnings() {
                                 color: "var(--text-color)",
                             }}
                         >
-                            {/* ✅ Conditionally Render Image or Icon */}
-                            <div className="relative w-full h-20 mb-4 flex items-center justify-center">
-                                {learning.image ? (
-                                    <Image
-                                        src={learning.image}
-                                        alt={learning.title}
-                                        fill
-                                        className="object-contain"
-                                        unoptimized
-                                    />
-                                ) : Icon ? (
-                                    <Icon
-                                        size={56}
-                                        className="text-blue-500"
-                                        style={{ color: "var(--accent-color)" }}
-                                    />
-                                ) : null}
+                            <div className="w-full h-25 mb-4 flex items-center justify-center text-center">
+                                {/* ✅ Conditionally Render Image or Icon */}
+                                <div className="relative w-20 h-20 mb-4">
+                                    {/* <div className="relative w-20 h-20 mb-4"> */}
+
+                                    {learning.image ? (
+                                        <Image
+                                            src={learning.image}
+                                            alt={learning.title}
+                                            fill
+                                            className="object-contain"
+                                            unoptimized
+                                        />
+                                    ) : Icon ? (
+                                        <Icon
+                                            size={56}
+                                            className="text-blue-500"
+                                            style={{ color: "var(--accent-color)" }}
+                                        />
+                                    ) : null}
+                                </div>
                             </div>
+
 
                             <h3
                                 className="text-xl font-semibold mb-2"

@@ -2,7 +2,9 @@ import { IconType } from "react-icons";
 import { DiMongodb } from "react-icons/di";
 import { FaCamera, FaMapMarkerAlt } from "react-icons/fa";
 import { FaBluetooth, FaNodeJs, FaReact } from "react-icons/fa6";
+import { IoLogoVercel } from "react-icons/io5";
 import { SiSupabase } from "react-icons/si";
+import { TbBrandVercel, TbBrandVercelFilled } from "react-icons/tb";
 
 type Learning = {
     title: string;
@@ -17,19 +19,21 @@ export const defaultLearnings: Learning[] = [
         title: "ReactJS",
         description: "Build fast, interactive user interfaces using the component-based React library from Meta.",
         link: "https://react.dev/",
-        icon: FaReact
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     },
     {
         title: "React Native",
         description: "Create cross-platform mobile apps for iOS and Android using React Native and JavaScript.",
         link: "https://reactnative.dev/",
-        icon: FaReact
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     },
     {
         title: "Next.js",
         description: "A powerful React framework for building optimized, server-rendered, and static web applications.",
         link: "https://nextjs.org/docs",
         image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+
+
     },
     {
         title: "Node.js",
