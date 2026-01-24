@@ -26,7 +26,7 @@ export default function Hero() {
                 className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full border-4 border-blue-500 shadow-xl overflow-hidden mb-5"
             >
                 <Image
-                    src="/heroImg.png"
+                    src="./heroImg.png"
                     alt="Aneesh Kishor"
                     fill
                     priority
