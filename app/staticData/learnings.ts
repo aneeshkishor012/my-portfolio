@@ -114,7 +114,7 @@ export const defaultLearnings: Learning[] = [
         image: "https://techicons.dev/tech-icons-logo.svg",
     },
     {
-        title: "Storyset",
+        title: "",
         description: "Free customizable illustrations for websites, apps, and presentations. You can edit colors, styles, and download as SVG/PNG or animated assets.",
         link: "https://storyset.com/",
         image: "https://storyset.com/images/logo.svg",
