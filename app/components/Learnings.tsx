@@ -62,6 +62,7 @@ export default function Learnings() {
                                             src={learning.image}
                                             alt={learning.title}
                                             fill
+                                            style={{...learning?.imageStyle}}
                                             className="object-contain"
                                             unoptimized
                                         />

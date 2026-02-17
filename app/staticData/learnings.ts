@@ -7,11 +7,12 @@ import { SiSupabase } from "react-icons/si";
 import { TbBrandVercel, TbBrandVercelFilled } from "react-icons/tb";
 
 type Learning = {
-    title: string;
+    title?: string;
     description: string;
     link: string;
     image?: string;
     icon?: IconType;
+    imageStyle?: any;
 };
 
 export const defaultLearnings: Learning[] = [
@@ -118,5 +119,9 @@ export const defaultLearnings: Learning[] = [
         description: "Free customizable illustrations for websites, apps, and presentations. You can edit colors, styles, and download as SVG/PNG or animated assets.",
         link: "https://storyset.com/",
         image: "https://storyset.com/images/logo.svg",
+        "imageStyle": {
+            "background":"#0a294d",
+            "borderRadius":"50%"
+        }
     }
 ];
