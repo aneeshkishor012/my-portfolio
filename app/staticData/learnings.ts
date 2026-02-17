@@ -112,5 +112,11 @@ export const defaultLearnings: Learning[] = [
         description: "Download, copy and paste tech icons in SVG and PNG format for your projects.",
         link: "https://techicons.dev/",
         image: "https://techicons.dev/tech-icons-logo.svg",
+    },
+    {
+        title: "Storyset",
+        description: "Free customizable illustrations for websites, apps, and presentations. You can edit colors, styles, and download as SVG/PNG or animated assets.",
+        link: "https://storyset.com/",
+        image: "https://storyset.com/images/logo.svg",
     }
 ];
